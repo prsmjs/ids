@@ -1,0 +1,31 @@
+{
+  "name": "@prsm/ids",
+  "version": "2.0.0",
+  "description": "Short, obfuscated, collision-proof, reversible identifiers",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "types": "./types/index.d.ts",
+  "files": [
+    "src",
+    "types"
+  ],
+  "scripts": {
+    "test": "vitest --reporter=verbose --run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npx tsc --declaration --allowJs --emitDeclarationOnly --skipLibCheck --target es2020 --module nodenext --moduleResolution nodenext --strict false --esModuleInterop true --outDir ./types src/index.js"
+  },
+  "author": "nvms",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "long": "^5.2.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

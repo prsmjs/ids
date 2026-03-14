@@ -1,0 +1,28 @@
+-- usage --
+
+encode() converts an integer to a short obfuscated string. decode() reverses
+it. the encoding is deterministic and reversible - same input always produces
+same output with the same alphabet.
+
+```js
+import id from '@prsm/ids'
+
+id.encode(12389125)  // "7rYTs_"
+id.decode("7rYTs_")  // 12389125
+```
+
+-- alphabet --
+
+the alphabet determines the character set and output. changing it changes
+all encodings. decode must use the same alphabet that was used to encode.
+
+setAlphabet() for a specific alphabet, randomizeAlphabet() for a random one.
+
+alphabet is module-level state, not per-instance. if you need multiple
+alphabets simultaneously, you'd need multiple imports (not currently
+supported - would need a factory function).
+
+-- limits --
+
+max encodable value is 2,147,483,647 (MAX_INT32). encode() throws if you
+pass a larger number. this is inherent to the 32-bit modular arithmetic.
