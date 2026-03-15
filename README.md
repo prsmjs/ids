@@ -1,4 +1,8 @@
-# @prsm/ids
+<p align="center">
+  <img src=".github/logo.svg" width="80" height="80" alt="ids logo">
+</p>
+
+<h1 align="center">@prsm/ids</h1>
 
 Short, obfuscated, collision-proof, reversible identifiers.
 
